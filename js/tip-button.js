@@ -12,7 +12,7 @@ tipButton.addEventListener('click', async function() {
       method: 'eth_sendTransaction',
       params: [
         {
-          'to': '0x136ae4016E3b19af6351EeDc1966f9468cD04197',
+          'to': '0xc0B254f1e80517Ea4D298a88AB9371dEec62792C',
           'from': user_address,
           'value': '0xB1A2BC2EC50000',
         },
