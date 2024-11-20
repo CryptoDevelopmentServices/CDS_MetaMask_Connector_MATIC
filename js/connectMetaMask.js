@@ -1,6 +1,6 @@
 const provider = window.ethereum;
 const PolygonChainId = '0x89';
-const tokenAddress = '0x23f07a1c03e7c6d0c88e0e05e79b6e3511073fd5';
+const tokenAddress = '0xF7B5991c676929BF98BF3E2e2e386789BB16912a';
 const tokenSymbol = 'CDS';
 const tokenDecimals = 8;
 const tokenImage = 'https://i.imgur.com/ZXf2SKw.png';
