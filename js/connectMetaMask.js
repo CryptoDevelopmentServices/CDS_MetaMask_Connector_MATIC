@@ -6,7 +6,7 @@ const tokenDecimals = 8;
 const tokenImage = 'https://i.imgur.com/ZXf2SKw.png';
 
 /** Connect to Crypto Development Services and the BSC mainnet network */
-const setupBinanceSmartChain = async () => {
+const setupPolygonChain = async () => {
   /** In case we need to throw an error, let's grab the error modal & error message */
   const errorModalContainer = document.querySelector('.error-modal-container');
   const errorMessage = document.querySelector('.error-message');
@@ -22,12 +22,12 @@ const setupBinanceSmartChain = async () => {
             chainName: 'Polygon (Mainnet)',
             nativeCurrency: {
               name: 'Polygon (MATIC)',
-              symbol: 'MATIC',
+              symbol: 'POL',
               decimals: 18,
             },
-            rpcUrls: ['https://polygon-rpc.com'],
+            rpcUrls: ['polygon-mainnet.infura.io'],
             blockExplorerUrls: [
-              'https://explorer.matic.network/',
+              'https://polygonscan.com/',
             ],
           },
         ],
@@ -64,12 +64,12 @@ const connectMetaMaskNav = document.querySelector('.connectMetaMask-nav');
 // we need to check if it's there before adding the event listener to it
  if (connectMetaMask) {
   connectMetaMask.addEventListener('click', () => {
-    setupBinanceSmartChain();
+    setupPolygonChain();
   });
 }
 //  } if (connectMetaMask) {
 // connectMetaMaskNav.addEventListener('click', () => {
-//   setupBinanceSmartChain();
+//   setupPolygonChain();
 // });
 //  }
 /** If we are already connected to Crypto Development Services, show disbled button with 'Connected' text */
@@ -89,7 +89,7 @@ const displayConnectedButton = async () => {
   });
 };
 
-const isConnectedToBinanceSmartChain = async () => {
+const isConnectedToPolygonChain = async () => {
   const chainId = await provider.request({
     method: 'eth_chainId',
   });
@@ -100,12 +100,12 @@ const isConnectedToBinanceSmartChain = async () => {
 
 if (provider) {
   /** Check if user is connected to Wrapped NewYorkCoin and display correct button text */
-  isConnectedToBinanceSmartChain();
+  isConnectedToPolygonChain();
 
   /** Reload the page if the chain changes */
   provider.on('chainChanged', () => {
     // MetaMask recommends reloading the page unless we have good reason not to
-    // Plus, everytime the window reloads, we call isConnectedToBinanceSmartChain again
+    // Plus, everytime the window reloads, we call isConnectedToPolygonChain again
     // and can show the correct 'Connected' or 'Connect MetaMask' button text
     window.location.reload();
   });
@@ -119,4 +119,3 @@ if (provider) {
     }
   });
 }
-
