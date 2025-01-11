@@ -21,7 +21,7 @@ const setupPolygonChain = async () => {
             chainName: 'Polygon (Mainnet)',
             nativeCurrency: {
               name: 'Polygon (MATIC)',
-              symbol: 'MATIC',
+              symbol: 'POL',
               decimals: 18,
             },
             rpcUrls: ['https://polygon-rpc.com/'], // Public RPC or Infura
